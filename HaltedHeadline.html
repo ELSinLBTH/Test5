@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"> 
+<script type = "text/javascript" src="statsjs.js"></script> 
+<title>Halted Schemes Headline Figures</title>
+
+<script src="echarts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.1-rc.1/echarts.min.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+ 
+<style>
+
+.chart1{ 
+      padding-top: 0px;
+      padding-right: 300px;
+      padding-left: 200px; 
+      width: 1000px;
+      height: 600px; 
+      font-family: 'Lato' !important;  
+      } 
+ </style>
+
+<p style="font-size: 24px; text-align: center; font-family: 'Lato'">Halted Schemes</p> 
+<div id="main" class="chart1">
+         
+<script>  
+
+var chartDom = document.getElementById('main');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+  title: {
+    text: 'Headline Figures'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  legend: {},
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: {
+    type: 'value',
+    boundaryGap: [0, 0.01]
+  },
+  yAxis: {
+    type: 'category',
+    data: ['Total Permitted', 'Total Outstanding', 'Halted Private', 'Halted AFH']
+  },
+  series: [
+    {
+      name: 'July 24',
+      type: 'bar',
+      color: '#DA70D6',
+      data: [5953, 4614, 3678, 936]
+    },
+  ]
+};
+
+option && myChart.setOption(option); 
+
+
+</script>
+
+</div>
+  
+
+</html>
